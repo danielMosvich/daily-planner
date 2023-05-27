@@ -1,0 +1,32 @@
+.swiper-button-next{
+  transform: translateX(50px);
+}
+.swiper-button-prev{
+  transform: translateX(-50px);
+}
+
+.swiper-button-next::after {
+  background-color: var(--user-color-1);
+  content: "";
+  width: 40px;
+  height: 40px;
+  clip-path: polygon(100% 50%, 50% 20%, 50% 80%);
+}
+.swiper-button-prev::after {
+  content: "";
+  background-color: var(--user-color-1);
+  width: 40px;
+  height: 40px;
+  clip-path: polygon(0 50%, 50% 15%, 50% 80%);
+}
+.swiper-pagination {
+  position: relative;
+  transform: translateY(10px);
+}
+.swiper-pagination-bullet {
+  background-color: var(--fill-5);
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background-color: var(--user-color-1);
+}

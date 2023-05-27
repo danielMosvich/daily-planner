@@ -1,0 +1,271 @@
+:root {
+  --logo-color-1: #77dd77;
+  --logo-color-2: #42ab49;
+
+  --font-1: "Inter", sans-serif;
+  --font-2: "Roboto", sans-serif;
+
+  --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+  --font-size-base: clamp(1rem, 0.14vw + 0.91rem, 1.19rem);
+  --font-size-md: clamp(1.25rem, 0.31vw + 1.1rem, 1.58rem);
+  --font-size-md-t: clamp(1.6rem, 0.2vw + 1.4rem, 1.58rem);
+  --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+  --font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --font-size-xxxl: clamp(2.05rem, 2.54vw + 3.17rem, 6rem);
+
+  /* --user-glow-opacity: 0.4; */
+  --user-glow-opacity: 1;
+  /* * NORMALS FILL */
+  --fill-edit: rgba(255, 255, 255, 0.7);
+
+  --fill-1: #fff;
+  --fill-2: #f4f5f7;
+  --fill-3: #f0f1f3;
+  --fill-4: #e6e7e9;
+  --fill-5: #dcdddf;
+  --fill-opposite: #020202;
+
+  --fill-modal: #3b3b3b60;
+  --fill-modal-1: #fff;
+  --fill-modal-2: #f4f5f7;
+  /* --fill-modal-3: red; */
+
+  --fill-a-1: #fff;
+  --fill-a-3: #eeeff1;
+
+  --fill-progress-bar-2: #f4f5f7;
+
+  --box-shadow-a-4: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+  --text-color-a-5: rgba(0, 0, 0, 0.2);
+
+  --text-color-1: #000;
+  --text-color-2: rgba(0, 0, 0, 0.8);
+  --text-color-3: rgba(0, 0, 0, 0.6);
+  --text-color-4: rgba(0, 0, 0, 0.4);
+  --text-color-5: rgba(0, 0, 0, 0.2);
+  --text-color-6: rgba(0, 0, 0, 0.1);
+  --text-color-opposite: #ffffff;
+
+  --box-shadow-1: rgba(0, 0, 0, 0.2) 0px 0px 2px 0px,
+    rgba(0, 0, 0, 0.1) 0px 15px 30px -6px;
+  /* ! minis components like inputs */
+  --box-shadow-2: 0 3px 15px 0px rgba(0, 0, 0, 0.05);
+
+  /* !Card PlayList Chadow */
+  --box-shadow-3: 0 10px 20px -3px rgba(0, 0, 0, 0.3);
+  /* !SelectTime shadow */
+  --box-shadow-4: 0px 2px 5px -2px rgba(0, 0, 0, 0.2);
+
+  /* *CLOCK TIME */
+  --box-shadow-5: 0 5px 15px 0px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(0, 0, 0, 0.04);
+
+  --box-shadow-5-hover: inset 0 0 20px var(--user-color-5-active),
+    0 0 0 1.5px var(--user-color-6-active);
+
+  --box-shadow-6: 0 5px 15px 0px rgba(0, 0, 0, 0.5);
+
+  --color-red: rgb(255, 105, 97);
+  --color-orange: rgb(255, 159, 10);
+  --color-blue: rgb(10, 132, 255);
+  --color-green: rgb(48, 209, 88);
+  --color-gray: rgb(142, 142, 147);
+  --user-color-5: rgba(0, 0, 0, 0.1);
+  --user-color-6: rgba(0, 0, 0, 0.2);
+
+  --transition-1: 0.3s;
+  --transition-1-s: 0.3;
+  --transition-2: 0.4s;
+
+  --linear-gradient-1: linear-gradient(
+    90deg,
+    rgb(48, 209, 88) 0%,
+    #a2f160 100%
+  );
+  --linear-gradient-2: linear-gradient(
+    90deg,
+    rgb(35, 223, 182) 0%,
+    #36f06d 100%
+  );
+  --linear-gradient-3: linear-gradient(
+    90deg,
+    rgb(207, 253, 210) 0%,
+    #d3ffff 100%
+  );
+
+  --buble-gradient-1: linear-gradient(145deg, #ff6b6b, #d4366b);
+  --buble-gradient-2: linear-gradient(145deg, #ffdc6b, #d47536);
+  --buble-gradient-3: linear-gradient(145deg, #6b9fff, #4136d4);
+  /* --buble-gradient-1:; */
+
+  /* GREEN */
+  --user-color-0: #bcffcd;
+  --user-color-1: rgb(133, 211, 130);
+  --user-color-2: #65bb78;
+  --user-color-3: #c9ffbb;
+  --user-color-4: #57b4733a;
+  --user-color-5-active: rgba(72, 255, 148, 0.15);
+  --user-color-6-active: rgba(0, 255, 128, 0.2);
+
+  /* --user-color-1: #34c759;
+  --user-color-2: #22863b;
+  --user-color-5-active: #34f5844d;
+  --user-color-6-active: #35f09233; */
+
+  /* Red */
+  /* --user-color-1: #ff3b30;
+  --user-color-2: #af2820;
+  --user-color-5-active: #fa1b1b4d;
+  --user-color-6-active: #ff6f6f33; */
+
+  /* --user-color-1: #0a84ff;
+  --user-color-2: #084f96;
+  --user-color-3: #6c62ff;
+  --user-color-5-active: #52adf84d;
+  --user-color-6-active: #6ecaff33; */
+
+  /* --user-color-1: #ff9f0a;
+  --user-color-2: #c97a05;
+  --user-color-5-active: #f8ab524d;
+  --user-color-6-active: #ffc06e33;
+  
+  --user-color-1: #ff375f;
+  --user-color-2: #fa6785;
+  --user-color-5-active: #ff375f4d;
+  --user-color-6-active: #f5748e33;
+  
+  
+  --user-color-1: #af52de;
+  --user-color-2: #db93ff;
+  --user-color-5-active: #af52de4d;
+  --user-color-6-active: #af52de33;
+
+
+  --user-color-1: #00c7be;
+  --user-color-2: #0c817b;
+  --user-color-5-active: #00c7be4d;
+  --user-color-6-active: #00c7be33; */
+}
+.dark {
+  --fill-opposite: #ffffff;
+  --fill-edit: rgba(7, 7, 7, 0.7);
+  --user-glow-opacity: 1;
+
+  --fill-1: #1c1c1e;
+  --fill-2: rgb(10, 10, 10);
+  --fill-3: #2c2c2e;
+  --fill-4: #39393b;
+  --fill-5: rgb(65, 65, 68);
+
+  --fill-modal: rgba(0, 0, 0, 0.61);
+  --fill-modal-1: #313131;
+  --fill-modal-2: rgba(32, 32, 33);
+  /* --fill-modal-3: #f0f1f3; */
+
+  --fill-a-1: #4e4e55;
+  --fill-a-3: #252529;
+
+  --fill-progress-bar-2: #414141;
+
+  --box-shadow-a-4: none;
+  --text-color-a-5: #00000000;
+
+  --text-color-1: #fdfdfd;
+  --text-color-2: rgba(255, 255, 255, 0.8);
+  --text-color-3: rgba(255, 255, 255, 0.6);
+  --text-color-4: rgba(255, 255, 255, 0.4);
+  --text-color-5: rgba(255, 255, 255, 0.2);
+  --text-color-6: rgba(255, 255, 255, 0.1);
+
+  --box-shadow-1: none;
+  --box-shadow-2: none;
+  --box-shadow-3: none;
+  --box-shadow-4: none;
+  /* *CLOCK TIME */
+  --box-shadow-5: inset 0 0 15px rgba(253, 253, 253, 0.1),
+    0 0 0 1.5px rgba(253, 253, 253, 0.2);
+}
+.black {
+  --fill-edit: rgba(7, 7, 7, 0.7);
+  --user-glow-opacity: 1;
+  /* --fill-modal: #ff5656; */
+
+  --fill-1: #000000;
+  --fill-2: #000000;
+  --fill-3: #000000;
+  --fill-4: #000000;
+  --fill-5: #000000;
+
+  --fill-modal: #13131360;
+
+  --fill-modal-1: #000000;
+  --fill-modal-2: #000000;
+  --fill-modal-3: #000000;
+  --fill-a-1: #000000;
+  --fill-a-3: #000000;
+  --fill-progress-bar-2: #000000;
+  --box-shadow-a-4: none;
+  --text-color-a-5: rgba(255, 255, 255, 0.2);
+  --text-color-1: #ffffff;
+  --text-color-2: rgba(255, 255, 255, 0.8);
+  --text-color-3: rgba(255, 255, 255, 0.6);
+  --text-color-4: rgba(255, 255, 255, 0.4);
+  --text-color-5: rgba(255, 255, 255, 0.2);
+  --text-color-6: rgba(255, 255, 255, 0.1);
+  --box-shadow-1: 0 0 0 1.5px rgb(34, 34, 37);
+  /* ! minis components like inputs */
+  --box-shadow-2: none;
+
+  /* !Card PlayList Chadow */
+  --box-shadow-3: none;
+  /* !SelectTime shadow */
+  --box-shadow-4: none;
+
+  /* *CLOCK TIME */
+  --box-shadow-5: none;
+  --transition-1: 0.3s;
+  --transition-2: 0.4s;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: var(--font-1);
+}
+
+html {
+  background-color: var(--fill-1);
+}
+
+/* width */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+  /* margin: 15px 0; */
+  /* box-shadow: inset 0 0 5px grey;  */
+  border-radius: 10px;
+  /* padding: 5px 0; */
+  background-color: var(--fill-5);
+  /* background-color: red; */
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background: var(--user-color-1);
+  border-radius: 8px;
+  /* margin: 10px; */
+  /* box-shadow: var(--box-shadow-1); */
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--user-color-2);
+}
