@@ -11,6 +11,7 @@ import PlaylistEdit from "../modals/playlistEdit";
 import { useEffect } from "react";
 import CarouselCards from "./carouselCards";
 import "./carouselCreative.css";
+import ConfirmationModal from "../modals/confirmationModal";
 
 const Container = styled.div`
   width: 100%;
@@ -34,17 +35,17 @@ const ContainerOptions = styled.div`
   gap: 10px;
 `;
 function PlayList() {
-
-  const [allPlaying, setAllPlaying] = useState(false)
-
+  const [allPlaying, setAllPlaying] = useState(false);
+  const [showModalConfirmation, setShowModalConfirmation] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showModalEdit, setShowModalEdit] = useState(false);
+  // const [deleteFunction, setDeleteFunction] = useState(null)
   const [playlist, setPlaylist] = useState({
     title: "",
     valume: 0.5,
     url: "",
     image: "",
-    index:null
+    index: null,
   });
   const [songs, setSongs] = useState([
     {
@@ -97,6 +98,7 @@ function PlayList() {
     <Container>
       {showModalEdit && (
         <Layout
+          title="Editar"
           closeModal={() => {
             setShowModalEdit(false);
             setShowModal(true);
@@ -114,7 +116,7 @@ function PlayList() {
       )}
       {showModal && (
         <Layout
-          title="add playlist or music"
+          title="Agrega tu musica / playlist"
           closeModal={() => {
             setShowModal(false);
           }}
@@ -126,7 +128,42 @@ function PlayList() {
             songs={songs}
             setShowModal={setShowModal}
             setShowModalEdit={setShowModalEdit}
+            setShowModalConfirmation={setShowModalConfirmation}
           />
+        </Layout>
+      )}
+      {showModalConfirmation && (
+        <Layout
+          title="Eliminar tu Music Card"
+          closeModal={() => {
+            setShowModalConfirmation(false);
+            setShowModal(true)
+          }}
+        >
+          <ConfirmationModal
+            closeModal={() => {
+              setShowModalConfirmation(false);
+              setShowModal(true);
+            }}
+            text={"ya no se podra recuperar la musica."}
+            confirmbuttonText={"Eliminar"}
+            anyFunction={() => {
+              // console.log(playlist);
+              let newArray = [...songs];
+              newArray.splice(playlist.index, 1);
+              setSongs(newArray);
+              localStorage.setItem("songs", JSON.stringify(newArray));
+              setPlaylist({
+                title: "",
+                valume: 0.5,
+                url: "",
+                image: "",
+                index: null,
+              });
+              setShowModalConfirmation(false);
+              setShowModal(true);
+            }}
+          ></ConfirmationModal>
         </Layout>
       )}
       <Header>
@@ -141,12 +178,12 @@ function PlayList() {
           tooltipButton
           bgOutlined={"var(--color-red)"}
           anyFunction={() => {
-            console.log("xd pause")
+            console.log("xd pause");
             setAllPlaying(true);
             // setAllPlaying(false);
-            setTimeout(()=>{
+            setTimeout(() => {
               setAllPlaying(false);
-            },100)
+            }, 100);
           }}
         >
           <svg
@@ -190,7 +227,11 @@ function PlayList() {
         </IconButton>
       </ContainerOptions>
       {/* <CarouselCreative songs={songs}/> */}
-      <CarouselCards songs={songs} allPlaying={allPlaying} setAllPlaying={setAllPlaying}/>
+      <CarouselCards
+        songs={songs}
+        allPlaying={allPlaying}
+        setAllPlaying={setAllPlaying}
+      />
     </Container>
   );
 }

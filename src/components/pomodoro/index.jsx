@@ -73,8 +73,8 @@ export default function Pomodoro() {
         </Layout>
       )}
       <Header>
-        <CardTitle>Pomodoro Clock</CardTitle>
-        <CardSubtitle>manage your time.</CardSubtitle>
+        <CardTitle>Reloj Pomodoro</CardTitle>
+        <CardSubtitle>maneja tu tiempo.</CardSubtitle>
       </Header>
       <SelectTime value={position} changePosition={changePosition} setIsStart={setIsStart} />
       {time && (

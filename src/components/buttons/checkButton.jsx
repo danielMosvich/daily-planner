@@ -36,7 +36,7 @@ export default function CheckButton({ status, functionChange, todo }) {
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        fill="none"
+        // fill="currentColor"
         viewBox="0 0 24 24"
         strokeWidth={4}
         stroke="currentColor"

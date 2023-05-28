@@ -228,8 +228,8 @@ const TodoList = () => {
         </Layout>
       )}
       <ContainerContent>
-        <CardTitle>to-do list</CardTitle>
-        <CardSubtitle>add your task.</CardSubtitle>
+        <CardTitle>lista de tareas</CardTitle>
+        <CardSubtitle>agrega tu lista de tareas y completalas.</CardSubtitle>
         {/* BARRA DE PROGRESO */}
         <PorgressBar>
           <ProgressText>

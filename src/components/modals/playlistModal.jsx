@@ -76,6 +76,7 @@ export default function PlaylistModal({
   setShowModalEdit,
   setPlaylist,
   setSongs,
+  setShowModalConfirmation
 }) {
   return (
     <Container>
@@ -91,11 +92,14 @@ export default function PlaylistModal({
         >
           <Content>
             <DeleteButton
-              onClick={(e) => {
-                e.stopPropagation();
-                let newArray = [...songs];
-                newArray.splice(i, 1);
-                setSongs(newArray);
+              onClick={(event) => {
+                event.stopPropagation();
+                setShowModal(false)
+                setShowModalConfirmation(true)
+                setPlaylist({...e, index:i})
+                // let newArray = [...songs];
+                // newArray.splice(i, 1);
+                // setSongs(newArray);
               }}
             >
               <IconContainer size={20}>

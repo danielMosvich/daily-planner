@@ -79,7 +79,7 @@ const ContainerInformation = styled.div`
   display: flex;
   position: relative;
   /* background-color: red; */
-  @media (max-width:1000px) {
+  @media (max-width: 1000px) {
     overflow-x: clip;
   }
 `;
@@ -106,6 +106,11 @@ const ContainerText = styled.div`
     font-size: var(--font-size-base);
     font-weight: 500;
   }
+  span{
+    color: var(--text-color-5);
+    letter-spacing: 1px;
+    font-size: var(--font-size-sm);
+  }
 `;
 const HeaderContent = styled.div`
   /* background-color: pink; */
@@ -115,15 +120,15 @@ const HeaderContent = styled.div`
 const ContainerImage = styled.div`
   outline: 6px solid var(--fill-1);
   position: absolute;
-  top: -45%;
+  top: -35%;
   z-index: 3;
   background-color: #989898;
   background-size: cover;
   background-position: 0 10px;
   background-repeat: no-repeat;
 
-  width: 140px;
-  height: 140px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   overflow: clip;
   margin-bottom: 20px;
@@ -207,7 +212,7 @@ const ContainerApps = styled.div`
 const ContainerSettings = styled.div`
   z-index: 2;
   padding: 20px;
-  @media (max-width:1000px) {
+  @media (max-width: 1000px) {
     padding: 20px 40px;
   }
   gap: 10px;
@@ -317,6 +322,8 @@ export default function Home() {
   const [themes, setThemes] = useState("light");
   const [components, setComponents] = useState([]);
   const [componentsArray, setComponentsArray] = useState([]);
+  const [max, setMax] = useState("")
+
 
   const colors = {
     green: {
@@ -390,6 +397,10 @@ export default function Home() {
     setShowModal(false);
   }
   useEffect(() => {
+    let megabytes = Math.round(JSON.stringify(localStorage).length) / 1048576;
+    setMax(Math.round(megabytes * 100) / 100 + "MB / 5.00MB");
+
+    
     document.title = `${user}-Planner `;
     function handleLoad() {
       setLoading(false);
@@ -579,6 +590,7 @@ export default function Home() {
                   <p>
                     {days[day]} {dayNumber}, {months[month]}, {year} 🌸🌺
                   </p>
+                  <span>{max}</span>
                 </ContainerText>
               </div>
             </HeaderContent>

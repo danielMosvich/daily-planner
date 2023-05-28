@@ -85,7 +85,7 @@ export default function Loader({ loading }) {
   return (
     <Container opacity={opacity} show={show}>
       <ContainerIcon>
-        <img src="./vite.svg" alt="" />
+        <img src="./dailyplanner_logo.svg" alt="" />
       </ContainerIcon>
       {/* </IconContainer> */}
       {/* <h2>loading</h2> */}

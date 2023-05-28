@@ -179,7 +179,7 @@ export default function AddComponentModal({
               />
             </svg>
           </IconContainer>
-          <h3>to-do list</h3>
+          <h3>lista de tareas</h3>
         </Card>
         <Card
           bg={"var(--buble-gradient-3)"}

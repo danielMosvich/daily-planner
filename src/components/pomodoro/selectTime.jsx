@@ -53,13 +53,13 @@ const SelectTime = ({value,changePosition,setIsStart}) => {
           active={value === 1 ? "true" : "false"}
           onClick={() => handlePosition(1)}
         >
-          Short Break
+          Descanso corto
         </Option>
         <Option
           active={value === 2 ? "true" : "false"}
           onClick={() => handlePosition(2)}
         >
-          Long Break
+          Descanso largo
         </Option>
       </Background>
     </Container>
