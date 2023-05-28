@@ -281,7 +281,7 @@ const IconEdit = styled.div`
 //   }
 // `;
 export default function Home() {
-  const { user } = useParams();
+  // const { user } = useParams();
   const navigate = useNavigate();
   const [username, setUsername] = useState("username");
   const [img, setImage] = useState("");
@@ -401,7 +401,7 @@ export default function Home() {
     setMax(Math.round(megabytes * 100) / 100 + "MB / 5.00MB");
 
     
-    document.title = `${user}-Planner `;
+    document.title = `${localStorage.getItem("username")}-Planner `;
     function handleLoad() {
       setLoading(false);
     }
