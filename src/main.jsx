@@ -13,7 +13,7 @@ const router = createBrowserRouter([
   {
     path: "/:user",
     element: <Home />,
-    errorElement:"/"
+    errorElement:<App />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
