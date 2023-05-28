@@ -178,7 +178,7 @@ function PlayList() {
           tooltipButton
           bgOutlined={"var(--color-red)"}
           anyFunction={() => {
-            console.log("xd pause");
+            // console.log("xd pause");
             setAllPlaying(true);
             // setAllPlaying(false);
             setTimeout(() => {

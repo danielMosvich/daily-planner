@@ -35,8 +35,24 @@ export default function CheckButton({ status, functionChange, todo }) {
       }}
     >
       <svg
+        strokeWidth="1.5"
+        viewBox="0 0 24 24"
+        fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        // fill="currentColor"
+        // color="#000000"
+        // stroke="currentColor"
+      >
+        <path
+          d="M5 13l4 4L19 7"
+          stroke="currentColor"
+          strokeWidth="5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        ></path>
+      </svg>
+      {/* <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
         viewBox="0 0 24 24"
         strokeWidth={4}
         stroke="currentColor"
@@ -47,7 +63,7 @@ export default function CheckButton({ status, functionChange, todo }) {
           strokeLinejoin="round"
           d="M4.5 12.75l6 6 9-13.5"
         />
-      </svg>
+      </svg> */}
     </Container>
   );
 }

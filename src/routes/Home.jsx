@@ -106,7 +106,7 @@ const ContainerText = styled.div`
     font-size: var(--font-size-base);
     font-weight: 500;
   }
-  span{
+  span {
     color: var(--text-color-5);
     letter-spacing: 1px;
     font-size: var(--font-size-sm);
@@ -186,7 +186,7 @@ const ContainerApps = styled.div`
     props.components > 0
       ? "minmax(450px, 1fr) minmax(450px, 1fr)"
       : "minmax(450px, 0.5fr)"};
-  grid-auto-rows: 525px;
+  grid-auto-rows: 500px;
   justify-content: center;
 
   @media (max-width: 1000px) {
@@ -281,7 +281,7 @@ const IconEdit = styled.div`
 //   }
 // `;
 export default function Home() {
-  // const { user } = useParams();
+  const { user } = useParams();
   const navigate = useNavigate();
   const [username, setUsername] = useState("username");
   const [img, setImage] = useState("");
@@ -322,8 +322,7 @@ export default function Home() {
   const [themes, setThemes] = useState("light");
   const [components, setComponents] = useState([]);
   const [componentsArray, setComponentsArray] = useState([]);
-  const [max, setMax] = useState("")
-
+  const [max, setMax] = useState("");
 
   const colors = {
     green: {
@@ -400,18 +399,17 @@ export default function Home() {
     let megabytes = Math.round(JSON.stringify(localStorage).length) / 1048576;
     setMax(Math.round(megabytes * 100) / 100 + "MB / 5.00MB");
 
-    
     document.title = `${localStorage.getItem("username")}-Planner `;
     function handleLoad() {
       setLoading(false);
     }
     window.addEventListener("load", handleLoad);
 
-    // if (user !== localStorage.getItem("username")) {
-    //   navigate("/");
-    // }
-    if(!localStorage.getItem("username")){
-      navigate("/")
+    if (user !== localStorage.getItem("username")) {
+      navigate("/");
+    }
+    if (!localStorage.getItem("username")) {
+      navigate("/");
     }
 
     if (loading) {
@@ -472,9 +470,14 @@ export default function Home() {
       {/*------------------------- CONTENIDO! iwi */}
       {showModal && (
         <Layout
-          title="add component"
-          subtitle={"select your component for your use."}
-          closeModal={() => setShowModal(false)}
+          title="Agregar componentes"
+          subtitle={"elige los componentes que necesites."}
+          initial={componentsArray}
+          setComponentsArray={setComponentsArray}
+          closeModal={() => {
+            setShowModal(false);
+            // setComponentsArray(componentsArray)
+          }}
         >
           <AddComponentModal
             componentsArray={componentsArray}

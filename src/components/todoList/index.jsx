@@ -52,8 +52,8 @@ const BarSpan = styled.div`
 `;
 // !LIST________________________
 const ContainerUl = styled.div`
-  max-height: 250px;
-  min-height: 250px;
+  max-height: 225px;
+  min-height: 225px;
   overflow-x: clip;
   overflow-y: auto;
   padding: 10px 0 0;

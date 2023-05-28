@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const Container = styled(motion.div)`
   min-width: 100vw;
@@ -77,12 +78,22 @@ export default function Layout({
   subtitle,
   closeModal,
   children,
+  initial,
+  setComponentsArray,
 }) {
+  const [initialValues, setInitialValues] = useState(
+    initial ? [...initial] : null
+  );
   function closeFunction() {
     closeModal();
   }
+  function intialFunction() {
+    setComponentsArray(initialValues);
+    closeModal();
+  }
+
   return (
-    <Container onClick={closeFunction}>
+    <Container onClick={initial ? intialFunction : closeFunction}>
       <Modal
         initial={{ opacity: 0, y: 200 }}
         animate={{ opacity: 1, y: 0 }}
@@ -103,6 +114,23 @@ export default function Layout({
             <Title>{title}</Title>
             <CloseButton onClick={closeFunction}>
               <svg
+                width="24px"
+                height="24px"
+                strokeWidth="1.5"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                // color="#000000"
+              >
+                <path
+                  d="M6.758 17.243L12.001 12m5.243-5.243L12 12m0 0L6.758 6.757M12.001 12l5.243 5.243"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></path>
+              </svg>
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
                 viewBox="0 0 24 24"
@@ -115,7 +143,7 @@ export default function Layout({
                   strokeLinejoin="round"
                   d="M6 18L18 6M6 6l12 12"
                 />
-              </svg>
+              </svg> */}
             </CloseButton>
           </Head>
           {subtitle && <Subtitle>{subtitle}</Subtitle>}

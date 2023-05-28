@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
 import IconContainer from "../miniComponents/iconContainer";
+import { useState } from "react";
 
 const Container = styled.div``;
 const ContainerCards = styled.div`
@@ -101,8 +102,10 @@ export default function AddComponentModal({
   handleSubmit,
   componentsArray,
   setComponentsArray,
-  closeModal
+  closeModal,
+  
 }) {
+  const [initialArray, setInitialArray] = useState([...componentsArray])
   function setLocalStorage(array) {
     localStorage.setItem("components", JSON.stringify(array));
   }
@@ -118,7 +121,7 @@ export default function AddComponentModal({
     const newArray = [...componentsArray];
     newArray.push(type);
     setComponentsArray(newArray);
-    setLocalStorage(newArray);
+    // setLocalStorage(newArray);
   }
 
   return (
@@ -212,12 +215,17 @@ export default function AddComponentModal({
       </ContainerCards>
 
       <ContainerButtons>
-        <ButtonDelete onClick={closeModal}>
+        <ButtonDelete onClick={()=>{
+          handleSubmit(initialArray)
+          setComponentsArray(initialArray)
+        }}>
           <h3>cancelar</h3>
         </ButtonDelete>
         <Button
           onClick={() => {
             handleSubmit(componentsArray);
+            setLocalStorage(componentsArray)
+            setInitialArray([])
           }}
         >
           

@@ -416,7 +416,7 @@ function App() {
     if (username !== "") {
       localStorage.setItem("username", username);
       if (urlCanvas) localStorage.setItem("avatar", urlCanvas);
-      history("/place");
+      history(`/${username}`);
     }
   };
   const handleUsername = (e) => {
@@ -467,9 +467,9 @@ function App() {
     </ButtonGoogle>
   );
   useEffect(() => {
-    if (localStorage.getItem("username") && localStorage.getItem("avatar")) {
-      // history(`/${localStorage.getItem("username")}`);
-      history(`/place`);
+    if (localStorage.getItem("username")){
+      history(`/${localStorage.getItem("username")}`);
+      // history(`/place`);
     } else {
       document.title = "daily-planner";
     }
