@@ -416,7 +416,7 @@ function App() {
     if (username !== "") {
       localStorage.setItem("username", username);
       if (urlCanvas) localStorage.setItem("avatar", urlCanvas);
-      history(username);
+      history("/place");
     }
   };
   const handleUsername = (e) => {
@@ -468,8 +468,8 @@ function App() {
   );
   useEffect(() => {
     if (localStorage.getItem("username") && localStorage.getItem("avatar")) {
-      // setUsername(localStorage.getItem("username"));
-      history(`/${localStorage.getItem("username")}`);
+      // history(`/${localStorage.getItem("username")}`);
+      history(`/place`);
     } else {
       document.title = "daily-planner";
     }

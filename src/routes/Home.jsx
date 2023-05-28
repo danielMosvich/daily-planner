@@ -407,8 +407,11 @@ export default function Home() {
     }
     window.addEventListener("load", handleLoad);
 
-    if (user !== localStorage.getItem("username")) {
-      navigate("/");
+    // if (user !== localStorage.getItem("username")) {
+    //   navigate("/");
+    // }
+    if(!localStorage.getItem("username")){
+      navigate("/")
     }
 
     if (loading) {
