@@ -15,6 +15,16 @@ const Container = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  /* background-color:red; */
+  /* @media (max-width:550px) {
+    max-width:200px !important;
+    max-height:200px !important;
+  } */
+  @media (max-width: 550px) {
+    min-width: 280px;
+    min-height: 200px;
+    /* background:red; */
+  }
 `;
 const Content = styled.div`
   padding: 20px;
@@ -124,7 +134,7 @@ const ContainerPlay = styled.div`
 `;
 
 // eslint-disable-next-line react/prop-types
-export default function PlayListCard({ title, url, image, card,allPlaying}) {
+export default function PlayListCard({ title, url, image, card, allPlaying }) {
   const [progres, setProgres] = useState(false);
   const [playing, setPlaying] = useState(allPlaying);
   const [volume, setVolume] = useState(0.5);
@@ -137,11 +147,10 @@ export default function PlayListCard({ title, url, image, card,allPlaying}) {
     playing ? setPlaying(false) : setPlaying(true);
     playing === false && setProgres(false);
   }
-  
 
-  useEffect(()=>{
-    setPlaying(false)
-  },[allPlaying])
+  useEffect(() => {
+    setPlaying(false);
+  }, [allPlaying]);
   return (
     <Container image={image} card={card ? "true" : "false"}>
       <ReactPlayer

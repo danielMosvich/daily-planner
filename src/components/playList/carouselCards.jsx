@@ -29,7 +29,7 @@ export default function CarouselCards({ songs, allPlaying, setAllPlaying }) {
         modules={[EffectCards,Navigation,Pagination]}
         className="mySwiper"
         style={{
-          width: "350px",
+          // width: "350px",
           // height: "250px",
           overflow:"visible",
           // background:"green"

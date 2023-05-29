@@ -11,6 +11,9 @@ const Container = styled.p`
     padding-bottom: 8px;
     margin: 5px 0 8px;
     transition: color var(--transition-1), border var(--transition-1);
+    @media (max-width:450px) {
+        font-size: var(--font-size-sm);
+    }
 `
 export default function CardSubtitle({children}){
     return(

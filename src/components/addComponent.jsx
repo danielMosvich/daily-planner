@@ -1,12 +1,8 @@
 import styled from "styled-components";
 import IconContainer from "./miniComponents/iconContainer";
 const Container = styled.div`
-  /* position: fixed; */
-  /* top: 10px;
-  right: 50px; */
+  /* width:100%; */
   background-color: var(--fill-1);
-  /* width: 150px;
-  height: 150px; */
   border-radius: 50%;
   padding: 10px;
   display: flex;

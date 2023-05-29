@@ -4,7 +4,12 @@
 .swiper-button-prev{
   transform: translateX(-50px);
 }
-
+.swiper{
+  width: 350px;
+  @media (max-width: 550px) {
+    width: 280px;
+  }
+}
 .swiper-button-next::after {
   background-color: var(--user-color-1);
   content: "";

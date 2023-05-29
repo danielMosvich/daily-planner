@@ -8,6 +8,9 @@ const Container = styled.h2`
     font-weight:600;
     text-transform: capitalize;
     transition: color var(--transition-1);
+    @media (max-width:450px) {
+        font-size: var(--font-size-base);
+    }
 `
 export default function CardTitle({children}){
     return(

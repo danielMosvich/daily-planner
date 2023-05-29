@@ -9,6 +9,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-evenly;
   background-color: var(fill-1);
+  /* background-color: red; */
 `;
 const ContainerUser = styled.div`
   display: flex;
@@ -18,6 +19,9 @@ const ContainerUser = styled.div`
     gap: 5px;
     width: 100%;
     font-size: var(--font-size-sm);
+    @media (max-width:550px) {
+      font-size: 0.7rem;
+    }
     font-weight: 500;
     color: var(--text-color-3);
     cursor: default;
@@ -28,6 +32,12 @@ const ContainerUser = styled.div`
       font-weight: 600;
       color: var(--user-color-1);
     }
+    svg{
+      @media (max-width:550px) {
+      display: none;
+      position: absolute;
+    }
+    }
   }
 `;
 const ContainerTwitter = styled.a`
@@ -36,13 +46,23 @@ const ContainerTwitter = styled.a`
   cursor: pointer;
   display: flex;
   text-decoration: none;
+  @media (max-width:550px) {
+      gap: 0px;
+    }
   h2 {
     font-size: var(--font-size-sm);
     font-weight: 500;
     color: var(--text-color-3);
     transition: color var(--transition-1);
+    @media (max-width:550px) {
+      font-size: 0.7rem;
+    }
   }
   svg {
+    @media (max-width:550px) {
+      display: none;
+      position: absolute;
+    }
     stroke: var(--text-color-3);
     transition: stroke var(--transition-1);
   }
@@ -61,13 +81,23 @@ const ContainerGithub = styled.a`
   cursor: pointer;
   display: flex;
   text-decoration: none;
+  @media (max-width:550px) {
+      gap: 0px;
+    }
   h2 {
     font-size: var(--font-size-sm);
     font-weight: 500;
     color: var(--text-color-3);
     transition: color var(--transition-1);
+    @media (max-width:550px) {
+      font-size: 0.7rem;
+    }
   }
   svg {
+    @media (max-width:550px) {
+      display: none;
+      position: absolute;
+    }
     stroke: var(--text-color-3);
     transition: stroke var(--transition-1);
   }

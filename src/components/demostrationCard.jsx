@@ -127,7 +127,7 @@ export default function DemostrationCard({
       <Main>
         <ContainerTitle>
           <h2>{username}</h2>
-          <p>{days[day]} {dayNumber}, {months[month]}, {year}  🌺🌸</p>
+          <p>{days[day]} {dayNumber}, {months[month]}, {year}</p>
         </ContainerTitle>
         <Cards>
           <Card>

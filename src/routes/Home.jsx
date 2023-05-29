@@ -82,13 +82,19 @@ const ContainerInformation = styled.div`
   @media (max-width: 1000px) {
     overflow-x: clip;
   }
+  @media (max-width: 550px) {
+    flex-direction: column-reverse;
+  }
 `;
 const ContainerText = styled.div`
   position: relative;
   z-index: 2;
   /* background-color: blue; */
-  padding-top: 75px;
+  padding-top: 75px; 
   padding-bottom: 30px;
+  @media (max-width:550px) {
+    padding: 20px 0;
+  }
   h2 {
     /* text-transform: capitalize; */
     /* max-width: 280px; */
@@ -116,6 +122,8 @@ const HeaderContent = styled.div`
   /* background-color: pink; */
   width: 100%;
   padding: 0 30px;
+  /* background-color: red; */
+  
 `;
 const ContainerImage = styled.div`
   outline: 6px solid var(--fill-1);
@@ -133,7 +141,9 @@ const ContainerImage = styled.div`
   overflow: clip;
   margin-bottom: 20px;
   cursor: pointer;
-
+  @media (max-width: 550px) {
+    top: -28%;
+  }
   img {
     /* border-radius: 50%; */
     width: 100%;
@@ -192,6 +202,9 @@ const ContainerApps = styled.div`
   @media (max-width: 1000px) {
     grid-template-columns: minmax(450px, 0.5fr);
   }
+  @media (max-width: 550px) {
+    grid-template-columns: 1fr;
+  }
 `;
 // const SettingsButton = styled.button`
 //   background-color: var(--fill-1);
@@ -212,13 +225,19 @@ const ContainerApps = styled.div`
 const ContainerSettings = styled.div`
   z-index: 2;
   padding: 20px;
-  @media (max-width: 1000px) {
-    padding: 20px 40px;
-  }
   gap: 10px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  @media (max-width: 1000px) {
+    padding: 20px 40px;
+  }
+  @media (max-width: 550px) {
+    padding: 0 30px;
+    margin-top: 80px;
+    justify-content: flex-start;
+    /* background-color: red; */
+  }
 `;
 const CardAdd = styled.div`
   display: flex;
@@ -381,7 +400,6 @@ export default function Home() {
   function handleSubmit(array) {
     const newArray = [];
     array.forEach((e) => {
-      // console.log(e);
       if (e === "pomodoro") {
         newArray.push(<Pomodoro />);
       }
@@ -476,7 +494,6 @@ export default function Home() {
           setComponentsArray={setComponentsArray}
           closeModal={() => {
             setShowModal(false);
-            // setComponentsArray(componentsArray)
           }}
         >
           <AddComponentModal
@@ -488,7 +505,6 @@ export default function Home() {
             setComponents={setComponents}
             setShowModal={setShowModal}
             components={components}
-            // handleComponents={handleComponents}
           />
         </Layout>
       )}
@@ -594,7 +610,7 @@ export default function Home() {
                 <ContainerText>
                   <h2>{username}</h2>
                   <p>
-                    {days[day]} {dayNumber}, {months[month]}, {year} 🌸🌺
+                    {days[day]} {dayNumber}, {months[month]}, {year}
                   </p>
                   <span>{max}</span>
                 </ContainerText>

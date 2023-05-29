@@ -32,6 +32,9 @@ const Option = styled.div`
   user-select: none;
   font-size: var(--font-size-sm);
   font-weight: 500;
+  text-align: center;
+  display: flex;
+  align-items: center;
   color: ${(props) =>
     props.active === "true" ? "var(--text-color-2)" : "var(--text-color-3)"};
 `;
