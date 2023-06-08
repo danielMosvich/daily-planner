@@ -97,6 +97,7 @@
   --buble-gradient-1: linear-gradient(145deg, #ff6b6b, #d4366b);
   --buble-gradient-2: linear-gradient(145deg, #ffdc6b, #d47536);
   --buble-gradient-3: linear-gradient(145deg, #6b9fff, #4136d4);
+  --buble-gradient-4: linear-gradient(145deg, #6bffc6, #36d45e);
   /* --buble-gradient-1:; */
 
   /* GREEN */
@@ -108,6 +109,7 @@
   --user-color-5-active: rgba(72, 255, 148, 0.15);
   --user-color-6-active: rgba(0, 255, 128, 0.2);
 
+  --user-scroll: rgb(121, 117, 117);
   /* --user-color-1: #34c759;
   --user-color-2: #22863b;
   --user-color-5-active: #34f5844d;
@@ -148,6 +150,7 @@
   --user-color-6-active: #00c7be33; */
 }
 .dark {
+
   --fill-opposite: #ffffff;
   --fill-edit: rgba(7, 7, 7, 0.7);
   --user-glow-opacity: 1;
@@ -253,7 +256,7 @@ html {
   /* box-shadow: inset 0 0 5px grey;  */
   border-radius: 10px;
   /* padding: 5px 0; */
-  background-color: var(--fill-5);
+  background: var(--user-scroll);
   /* background-color: red; */
 }
 

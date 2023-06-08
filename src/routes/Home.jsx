@@ -21,6 +21,7 @@ import IconButton from "../components/buttons/iconButton";
 import { useNavigate, useParams } from "react-router-dom";
 import LogoutModal from "../components/modals/confirmationModal";
 import IconContainer from "../components/miniComponents/iconContainer";
+import Notes from "../components/notes";
 // *-------------------------------------------
 const Container = styled.div`
   width: 100%;
@@ -191,7 +192,7 @@ const Buble3 = styled(motion.div)`
 const ContainerApps = styled.div`
   width: 100%;
   display: grid;
-  gap: 40px;
+  gap: 20px;
   grid-template-columns: ${(props) =>
     props.components > 0
       ? "minmax(450px, 1fr) minmax(450px, 1fr)"
@@ -400,6 +401,9 @@ export default function Home() {
   function handleSubmit(array) {
     const newArray = [];
     array.forEach((e) => {
+      if (e === "notes") {
+        newArray.push(<Notes />);
+      }
       if (e === "pomodoro") {
         newArray.push(<Pomodoro />);
       }
@@ -409,6 +413,7 @@ export default function Home() {
       if (e === "playlist") {
         newArray.push(<PlayList />);
       }
+     
     });
     setComponents(newArray);
     setShowModal(false);
